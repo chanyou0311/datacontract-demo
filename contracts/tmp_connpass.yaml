@@ -1,0 +1,92 @@
+name: tmp-connpass
+description: connpass API によるイベント情報
+owner: chanyou
+version: 1.0.0
+models:
+  logs:
+    fields:
+      event_id:
+        type: integer
+        description: イベントID
+        required: true
+      updated_at:
+        type: timestamp
+        description: 更新日時 (ISO-8601形式)
+        required: true
+      title:
+        type: string
+        description: タイトル
+        required: true
+      event_url:
+        type: string
+        description: connpass.com 上のURL
+        required: true
+      event_type:
+        type: string
+        description: イベント参加タイプ
+        required: true
+        enum: [participation, advertisement]
+      owner_nickname:
+        type: string
+        description: 管理者のニックネーム
+        required: true
+      series:
+        type: string
+        description: グループ
+        required: true
+      lat:
+        type: float
+        description: 開催会場の緯度
+        required: false
+      started_at:
+        type: timestamp
+        description: イベント開催日時 (ISO-8601形式)
+        required: true
+      hash_tag:
+        type: string
+        description: X(Twitter)のハッシュタグ
+        required: true
+      lon:
+        type: float
+        description: 開催会場の経度
+        required: false
+      waiting:
+        type: integer
+        description: 補欠者数
+        required: true
+      limit:
+        type: integer
+        description: 定員
+        required: true
+      owner_id:
+        type: integer
+        description: 管理者のID
+        required: true
+      owner_display_name:
+        type: string
+        description: 管理者の表示名
+        required: true
+      description:
+        type: string
+        description: 概要(HTML形式)
+        required: true
+      address:
+        type: string
+        description: 開催場所
+        required: false
+      catch:
+        type: string
+        description: キャッチ
+        required: false
+      accepted:
+        type: integer
+        description: 参加者数
+        required: true
+      ended_at:
+        type: timestamp
+        description: イベント終了日時 (ISO-8601形式)
+        required: true
+      place:
+        type: string
+        description: 開催会場
+        required: false

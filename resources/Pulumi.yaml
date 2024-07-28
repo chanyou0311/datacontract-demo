@@ -1,0 +1,7 @@
+name: datacontract
+runtime:
+  name: python
+  options:
+    toolchain: pip
+    virtualenv: venv
+description: Generate resources from data contracts.
